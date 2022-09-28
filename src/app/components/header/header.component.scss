@@ -1,7 +1,6 @@
 .app-header {
   background-color: var(--white);
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
   padding: 13px 31px;
   & h1.ant-typography {
     color: var(--black);

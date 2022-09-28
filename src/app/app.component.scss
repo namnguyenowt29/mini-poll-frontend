@@ -1,6 +1,9 @@
 #app-root {
-  &.ant-layout {
-    background: var(--primary-color);
-    min-height: 100%;
+  background: var(--primary);
+  min-height: 100vh;
+  & .ant-layout-content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
   }
 }
