@@ -1,0 +1,9 @@
+#app-root {
+  background: var(--primary);
+  min-height: 100vh;
+  & .ant-layout-content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+}
