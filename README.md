@@ -39,8 +39,11 @@ _<Angular@14.1.0 & Typesript@4.7.2 versions>_
 ## Structure
 
 We build the project working with multiple modules.
+
 **Each feature is a module**.
+
 Besides, there is an additional module `core` for storing services and `shared` for storing commonly used components, directives,...
+
 The initial project structure below:
 
 ```
