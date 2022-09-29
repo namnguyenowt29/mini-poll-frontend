@@ -1,18 +1,13 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { SharedModule } from 'app/shared/shared.module';
 import { CreatePollComponent } from './create-poll.component';
+import { CreatePollRoutingModule } from './create-poll.routing.modules';
 
 @NgModule({
   declarations: [CreatePollComponent],
   imports: [
     SharedModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: CreatePollComponent,
-      },
-    ]),
+    CreatePollRoutingModule
   ],
 })
-export class CreatePollModule {}
+export class CreatePollModule { }
