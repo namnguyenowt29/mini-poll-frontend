@@ -42,7 +42,7 @@ We build the project working with multiple modules.
 
 **Each feature is a module**.
 
-Besides, there is an additional module `core` for storing services and `shared` for storing commonly used components, directives,...
+Besides, there is an additional module `core` for storing services and `shared` for storing commonly used components, directives, pipes...
 
 The initial project structure below:
 
