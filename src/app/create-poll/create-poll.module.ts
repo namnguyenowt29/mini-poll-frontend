@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from 'app/shared/shared.module';
+import { CreatePollRoutingModule } from './create-poll-routing.module';
 import { CreatePollComponent } from './create-poll.component';
-import { CreatePollRoutingModule } from './create-poll.routing.modules';
 
 @NgModule({
   declarations: [CreatePollComponent],
-  imports: [
-    SharedModule,
-    CreatePollRoutingModule
-  ],
+  imports: [SharedModule, CreatePollRoutingModule],
 })
-export class CreatePollModule { }
+export class CreatePollModule {}
