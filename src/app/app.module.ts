@@ -1,18 +1,18 @@
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { registerLocaleData } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
-import { SharedModule } from './shared/shared.module';
-import { DashboardModule } from './dashboard/dashboard.module';
-import { CreatePollModule } from './create-poll/create-poll.module';
-import { PollDetailModule } from './poll-detail/poll-detail.module';
-import { HeaderComponent } from './components/header/header.component';
 import { ComponentsModule } from './components/components.module';
-import en from '@angular/common/locales/en';
+import { HeaderComponent } from './components/header/header.component';
+import { CoreModule } from './core/core.module';
+import { CreatePollModule } from './create-poll/create-poll.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { PollDetailModule } from './poll-detail/poll-detail.module';
+import { SharedModule } from './shared/shared.module';
 
 registerLocaleData(en);
 
@@ -33,4 +33,4 @@ registerLocaleData(en);
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
