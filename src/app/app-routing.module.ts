@@ -1,33 +1,40 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './auth/login/login.component';
-import { CreatePollComponent } from './create-poll/create-poll.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { PollDetailComponent } from './poll-detail/poll-detail.component';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
   {
     path: 'dashboard',
-    component: DashboardComponent,
+    loadChildren: () =>
+      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
     path: 'create-poll',
-    component: CreatePollComponent,
+    loadChildren: () =>
+      import('./create-poll/create-poll.module').then(
+        (m) => m.CreatePollModule
+      ),
   },
   {
     path: 'detail',
-    component: PollDetailComponent,
+    loadChildren: () =>
+      import('./poll-detail/poll-detail.module').then(
+        (m) => m.PollDetailModule
+      ),
   },
   {
     path: 'login',
-    component: LoginComponent,
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   { path: '**', redirectTo: '/dashboard' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules,
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
