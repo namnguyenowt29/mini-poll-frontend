@@ -41,54 +41,16 @@ _<Angular@14.1.0 & Typesript@4.7.2 versions>_
 We build the project working with multiple modules.
 
 **Each feature is a module**.
+Inside each feature modules, we have:
 
-Besides, there is an additional module `core` for storing services and `shared` for storing commonly used components, directives, pipes...
+- The components folder that includes all components of the feature.
+- The services folder that includes feature's services or interceptors
+- The models folder that includes all models/interfaces of data.
+
+Besides, there is an additional module `core` that includes some elements used once in the Angular app such as header, spinner, services... and the `shared` module for storing commonly used components, directives, pipes, config, directives.
 
 The initial project structure below:
 
 ```
-mini-poll-frontend
-└── src
-    └── app
-        ├── app-routing.module.ts
-        ├── app.component.html
-        ├── app.component.scss
-        ├── app.component.spec.ts
-        ├── app.component.ts
-        ├── app.module.ts
-        ├── auth
-        │   ├── auth.module.ts
-        │   ├── login
-        │   │   ├── login.component.html
-        │   │   ├── login.component.scss
-        │   │   └── login.component.ts
-        │   ├── login-form
-        │   │   ├── login-form.component.html
-        │   │   ├── login-form.component.scss
-        │   │   └── login-form.component.ts
-        ├── core
-        │   │   └──  core.module.ts
-        ├── components
-        │   │   ├── header
-        │   │   │   ├── header.component.html
-        │   │   │   ├── header.component.scss
-        │   │   │   └──  header.component.ts
-        │   │   └──  components.module.ts
-        ├── create-poll
-        │   │   ├──  create-poll.component.html
-        │   │   ├──  create-poll.component.scss
-        │   │   ├──  create-poll.component.ts
-        │   │   └──  create-poll.module.ts
-        ├── dashboard
-        │   │   ├──  dashboard.component.html
-        │   │   ├──  dashboard.component.scss
-        │   │   ├──  dashboard.component.ts
-        │   │   └──  dashboard.module.ts
-        ├── poll-detail
-        │   │   ├──  poll-detail.component.html
-        │   │   ├──  poll-detail.component.scss
-        │   │   ├──  poll-detail.component.ts
-        │   │   └──  poll-detail.module.ts
-        └── shared
-                └──  shared.module.ts
+![app structure Image](src/assets/images//app-structure.JPG)
 ```
