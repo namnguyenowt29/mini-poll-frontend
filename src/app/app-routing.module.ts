@@ -16,10 +16,10 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'detail',
+    path: 'poll-result',
     loadChildren: () =>
-      import('./poll-detail/poll-detail.module').then(
-        (m) => m.PollDetailModule
+      import('./poll-result/poll-result.module').then(
+        (m) => m.PollResultModule
       ),
   },
   {

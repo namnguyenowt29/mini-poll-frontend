@@ -11,8 +11,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { CoreModule } from './core/core.module';
 import { CreatePollModule } from './create-poll/create-poll.module';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { PollDetailModule } from './poll-detail/poll-detail.module';
 import { SharedModule } from './shared/shared.module';
+import { PollResultRoutingModule } from './poll-result/poll-result-routing.module';
 
 registerLocaleData(en);
 
@@ -27,10 +27,10 @@ registerLocaleData(en);
     SharedModule,
     DashboardModule,
     CreatePollModule,
-    PollDetailModule,
+    PollResultRoutingModule,
     ComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
