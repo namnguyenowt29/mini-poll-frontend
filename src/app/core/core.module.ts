@@ -1,8 +1,8 @@
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NetworkingInterceptor } from 'app/shared/networking-interceptor.service';
 import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
 import { LoadingService } from './services/loading.service';
 import { NgModule } from '@angular/core';
+import { NetworkingInterceptor } from './services/networking-interceptor.service';
 
 @NgModule({
   providers: [

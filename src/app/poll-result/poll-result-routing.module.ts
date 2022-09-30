@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PollDetailComponent } from './poll-detail.component';
+import { PollResultComponent } from './poll-result.component';
 
 const pollDetailRoutes: Routes = [
   {
     path: '',
-    component: PollDetailComponent,
+    component: PollResultComponent,
   },
 ];
 
@@ -13,4 +13,4 @@ const pollDetailRoutes: Routes = [
   imports: [RouterModule.forChild(pollDetailRoutes)],
   exports: [RouterModule],
 })
-export class PollDetailRoutingModule {}
+export class PollResultRoutingModule {}
