@@ -51,6 +51,5 @@ Besides, there is an additional module `core` that includes some elements used o
 
 The initial project structure below:
 
-```
-![app structure Image](src/assets/images//app-structure.JPG)
-```
+![app-structure](https://user-images.githubusercontent.com/106213821/193519274-ec916e36-2037-4ef2-aa76-1bd1f73c953c.JPG)
+
