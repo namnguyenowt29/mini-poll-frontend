@@ -1,1 +1,19 @@
-<p>dashboard-page works!</p>
+<nz-layout class="dashboard-page">
+  <h2 nz-typography>Dashboard</h2>
+  <button [nzType]="'default'" nz-button>
+    <a routerLink="/create-poll">
+      <span nz-icon nzType="plus" nzTheme="outline"></span>
+      Add Poll
+    </a>
+  </button>
+  <div class="dashboard-page__content">
+    <polls-table *ngIf="havePolls; else polls"></polls-table>
+  </div>
+</nz-layout>
+
+<ng-template #polls>
+  <div class="dashboard-guide">
+    <h1>CREATE YOUR FIRST POLL</h1>
+    <h2>Select Add Poll To start create a Poll</h2>
+  </div>
+</ng-template>

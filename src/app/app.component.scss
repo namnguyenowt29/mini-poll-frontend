@@ -1,9 +1,12 @@
 #app-root {
   background: var(--primary);
   min-height: 100vh;
-  & .ant-layout-content {
-    align-items: center;
-    display: flex;
-    justify-content: center;
+  & nz-header {
+    background-color: var(--white);
+    padding: 1.2em 2.3em;
+    top: 0;
+    z-index: 100;
+    position: sticky !important;
+    height: unset;
   }
 }
