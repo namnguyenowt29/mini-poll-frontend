@@ -1,9 +1,26 @@
 .app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   & h1.ant-typography {
     color: var(--black);
     font-size: 40px;
     font-weight: 400;
     line-height: 68px;
     margin-bottom: 0;
+  }
+
+  &__controls {
+    display: flex;
+    gap: 15px;
+  }
+
+  [nz-button] {
+    min-width: 120px;
+    height: 50px;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    font-size: 20px;
   }
 }

@@ -1,3 +1,12 @@
 <header class="app-header">
   <h1 nz-typography class="app-header__logo">Anonymous Poll</h1>
+  <app-user-menu
+    *ngIf="isLoggedIn; else unauthenticatedControls"
+  ></app-user-menu>
 </header>
+<ng-template #unauthenticatedControls>
+  <div class="app-header__controls">
+    <button nz-button>Log in</button>
+    <button nz-button>Register</button>
+  </div>
+</ng-template>
