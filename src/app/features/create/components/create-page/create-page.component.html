@@ -1,2 +1,43 @@
-<p>create-page works!</p>
-<text-field></text-field>
+<div class="create-poll">
+  <div class="create-poll__header">
+    <h3 nz-typography>CREATE A POLL</h3>
+    <h6 nz-typography>Complete the below fields to create your poll</h6>
+  </div>
+
+  <form class="create-poll__form" nz-form [nzLayout]="'vertical'">
+    <nz-form-item>
+      <nz-form-label nzFor="question">Title</nz-form-label>
+      <nz-form-control>
+        <input
+          id="question"
+          nz-input
+          type="text"
+          placeholder="Type your question here"
+        />
+      </nz-form-control>
+    </nz-form-item>
+
+    <button nz-button nzType="text">
+      <span nz-icon nzType="plus" nzTheme="outline"></span>
+      Add description
+    </button>
+
+    <nz-form-item>
+      <nz-select ngModel="lucy">
+        <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+        <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+        <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+      </nz-select>
+    </nz-form-item>
+
+    <nz-form-item class="create-poll__answer-options">
+      <input type="text" />
+      <button>Add option</button>
+    </nz-form-item>
+
+    <div class="form-actions">
+      <button type="button" nz-button nzType="primary">Cancel</button>
+      <button type="submit" nz-button nzType="primary">Continue</button>
+    </div>
+  </form>
+</div>

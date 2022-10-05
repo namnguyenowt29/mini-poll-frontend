@@ -1,0 +1,32 @@
+.create-poll {
+  background-color: var(--secondary);
+  &__header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding-top: 2.8em;
+    max-width: 501px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    h3.ant-typography {
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 20px;
+      letter-spacing: 0.02em;
+      color: var(--black);
+      margin-bottom: 0.33em;
+    }
+    h6.ant-typography {
+      font-size: 20px;
+      line-height: 20px;
+      letter-spacing: 0.02em;
+      font-weight: 400;
+      margin-bottom: 0.67em;
+      color: var(--grey);
+    }
+  }
+
+  &__form {
+    padding: 0px 93px 45px;
+  }
+}
