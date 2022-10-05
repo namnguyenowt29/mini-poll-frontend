@@ -1,0 +1,35 @@
+<ng-container>
+  <div nz-dropdown [nzDropdownMenu]="menu" class="menu">
+    <nz-avatar [nzSize]="52" nzIcon="user" nzSrc="{{ currentUser.avatar }}">
+    </nz-avatar>
+    <span nz-icon nzType="down" nzTheme="outline"></span>
+  </div>
+  <nz-dropdown-menu #menu="nzDropdownMenu">
+    <ul nz-menu>
+      <div nz-menu-item class="card-info">
+        <nz-avatar [nzSize]="72" nzIcon="user" nzSrc="{{ currentUser.avatar }}">
+        </nz-avatar>
+        <div class="card-info__username">
+          <h2>
+            {{ currentUser.name }}
+          </h2>
+          <span>
+            {{ currentUser.email }}
+          </span>
+        </div>
+      </div>
+      <li nz-menu-item>
+        <span nz-icon nzType="user" nzTheme="outline"></span>
+        <span>Profile</span>
+      </li>
+      <li nz-menu-item>
+        <span nz-icon nzType="key" nzTheme="outline"></span>
+        <span>Change Password</span>
+      </li>
+      <li nz-menu-item>
+        <span nz-icon nzType="logout" nzTheme="outline"></span>
+        <span>Log Out</span>
+      </li>
+    </ul>
+  </nz-dropdown-menu>
+</ng-container>
