@@ -1,0 +1,36 @@
+.table-wrapper {
+  & .ant-input-affix-wrapper {
+    max-width: 300px;
+    width: 100%;
+    float: right;
+    margin-right: 2.8em;
+    padding: 0.6em 0.7em;
+    border-radius: 20px;
+  }
+  &__polls {
+    padding: 0 6.25em;
+    & th,
+    td {
+      background-color: var(--white);
+      text-align: center;
+      border-bottom: 1px solid var(--black);
+    }
+  }
+  &__pagination {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.status-draft {
+  color: var(--grey);
+}
+.status-start {
+  color: var(--red);
+}
+.status-end {
+  color: var(--green);
+}
+.status-ended {
+  color: var(--green1);
+}
