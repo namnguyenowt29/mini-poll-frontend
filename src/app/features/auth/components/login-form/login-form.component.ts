@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login-form',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginFormComponent implements OnInit {
 
+  isLoading = false;
+  loginForm: FormGroup;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.loginForm = new FormGroup({
+      'email': new FormControl(null, [Validators.required, Validators.email]),
+      'password': new FormControl(null, [Validators.required]),
+    })
+  }
+
+  // TO-DO: calling api
+  onSubmit() {
+    this.isLoading = true;
+    setTimeout(() => (this.isLoading = false), 1000)
+    console.log(this.loginForm);
   }
 
 }
