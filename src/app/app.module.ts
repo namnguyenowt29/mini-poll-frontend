@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import en from '@angular/common/locales/en';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -19,6 +18,7 @@ import {
 } from '@ant-design/icons-angular/icons';
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { CoreModule } from './core/core.module';
 
 registerLocaleData(en);
 const icons: IconDefinition[] = [SearchOutline, PlusOutline, FilterOutline];
@@ -41,4 +41,4 @@ const icons: IconDefinition[] = [SearchOutline, PlusOutline, FilterOutline];
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

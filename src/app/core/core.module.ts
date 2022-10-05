@@ -21,4 +21,4 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
   exports: [HeaderComponent],
   imports: [NzTypographyModule],
 })
-export class CoreModule {}
+export class CoreModule { }
