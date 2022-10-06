@@ -4,7 +4,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
   {
-    path: 'login',
+    path: '',
     loadChildren: () =>
       import('./features/auth/auth.module').then((m) => m.AuthModule),
   },
@@ -36,4 +36,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

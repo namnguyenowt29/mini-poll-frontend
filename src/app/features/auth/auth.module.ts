@@ -6,12 +6,14 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginFormComponent } from './components/login-form/login-form.component';
-import { LoginPageComponent } from './components/login-page/login-page.component';
+import { LoginRegisterPageComponent } from './components/login-register-page/login-register-page.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
 
 @NgModule({
   declarations: [
-    LoginPageComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    RegisterFormComponent,
+    LoginRegisterPageComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -19,7 +21,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
     AuthRoutingModule,
     NzInputModule,
     NzButtonModule,
-    NzFormModule
+    NzFormModule,
   ],
 })
 export class AuthModule { }

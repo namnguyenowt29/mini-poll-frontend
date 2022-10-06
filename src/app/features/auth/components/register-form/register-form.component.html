@@ -1,9 +1,21 @@
 <form
   nz-form
-  [formGroup]="loginForm"
+  [formGroup]="registerForm"
   [nzLayout]="'vertical'"
   (submit)="onSubmit()"
 >
+  <nz-form-item>
+    <nz-form-label nzFor="name"> Name </nz-form-label>
+    <nz-form-control nzErrorTip="Name is required">
+      <input
+        nz-input
+        formControlName="name"
+        type="text"
+        id="name"
+        placeholder="Enter name"
+      />
+    </nz-form-control>
+  </nz-form-item>
   <nz-form-item>
     <nz-form-label nzFor="email"> Email </nz-form-label>
     <nz-form-control nzErrorTip="Email is not valid">
@@ -27,12 +39,11 @@
         placeholder="Enter password"
       />
     </nz-form-control>
-    <a [routerLink]="[]">Forgot Password?</a>
   </nz-form-item>
-  <button nz-button nzType="primary" [nzLoading]="isLoading">Log In</button>
+  <button nz-button nzType="primary" [nzLoading]="isLoading">Sign Up</button>
   <div class="sign-up--description">
     <span>
-      Don't have an account? <a [routerLink]="['/register']">Sign up</a>
+      Already have an account? <a [routerLink]="['/login']"> Login </a>
     </span>
   </div>
 </form>
