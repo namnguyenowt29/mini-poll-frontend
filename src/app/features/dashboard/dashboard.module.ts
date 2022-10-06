@@ -25,4 +25,4 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
     NzLayoutModule,
   ],
 })
-export class DashboardModule {}
+export class DashboardModule { }
