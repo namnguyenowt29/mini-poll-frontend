@@ -8,7 +8,7 @@ import { filter } from 'rxjs';
   styleUrls: ['./login-register-page.component.scss']
 })
 export class LoginRegisterPageComponent implements OnInit {
-  pageTitle: string;
+  pageTitle = "";
 
   constructor(private router: Router) { }
 
