@@ -9,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class RegisterFormComponent implements OnInit {
 
   isLoading = false;
-  registerForm: FormGroup;
+  registerForm!: FormGroup;
 
   constructor() { }
 
