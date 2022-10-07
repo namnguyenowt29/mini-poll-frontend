@@ -13,8 +13,6 @@ export class ModalComponent implements OnInit {
   @Input() hideCancelBtn = false;
   @Input() hideSubmitBtn = false;
 
-
-
   @Output() onSubmit = new EventEmitter<boolean>();
   @Output() onCancle = new EventEmitter<boolean>();
 
