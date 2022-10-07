@@ -2,7 +2,6 @@
   [(nzVisible)]="openModal"
   [nzTitle]="modalTitle"
   (nzOnCancel)="handleCancel()"
-  (nzOnOk)="handleOk()"
   [nzFooter]="modalFooter"
   nzCentered
 >
@@ -12,14 +11,26 @@
     </div>
   </ng-template>
 
-  <ng-container *nzModalContent> <ng-content></ng-content></ng-container>
+  <ng-container *nzModalContent> <ng-content> </ng-content> </ng-container>
 
   <ng-template #modalFooter>
     <div class="footer">
-      <button nz-button [nzType]="'default'" (click)="handleCancel()">
-        Cancel
+      <button
+        nz-button
+        [nzType]="'default'"
+        (click)="handleCancel()"
+        *ngIf="!hideCancelBtn"
+      >
+        {{ cancelText }}
       </button>
-      <button nz-button [nzType]="'primary'" (click)="handleOk()">OK</button>
+      <button
+        nz-button
+        [nzType]="'primary'"
+        (click)="handleOk()"
+        *ngIf="!hideSubmitBtn"
+      >
+        {{ submitText }}
+      </button>
     </div>
   </ng-template>
   <ng-template #modalFooter></ng-template>

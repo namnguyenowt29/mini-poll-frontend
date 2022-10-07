@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   //TO-DO: get this value from auth service
-  public isLoggedIn = true;
+  isLoggedIn = true;
 
   constructor() { }
 
