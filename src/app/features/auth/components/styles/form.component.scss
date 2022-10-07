@@ -1,0 +1,29 @@
+%elementTemplate {
+  width: 400px;
+  height: 50px;
+  border-radius: 15px;
+}
+
+$spacing-m: 10px;
+$spacing-l: 20px;
+
+form {
+  input {
+    @extend %elementTemplate;
+  }
+
+  [nz-button] {
+    @extend %elementTemplate;
+    margin-top: $spacing-m;
+  }
+
+  a {
+    margin-top: $spacing-m;
+  }
+
+  .sign-up--description {
+    margin-top: $spacing-l;
+    display: flex;
+    justify-content: center;
+  }
+}

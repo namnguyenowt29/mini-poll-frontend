@@ -2,19 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-login-form',
-  templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.scss']
+  selector: 'app-register-form',
+  templateUrl: './register-form.component.html',
+  styleUrls: ['./register-form.component.scss']
 })
-export class LoginFormComponent implements OnInit {
+export class RegisterFormComponent implements OnInit {
 
   isLoading = false;
-  loginForm!: FormGroup;
+  registerForm !: FormGroup;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.loginForm = new FormGroup({
+    this.registerForm = new FormGroup({
+      'name': new FormControl(null, [Validators.required]),
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'password': new FormControl(null, [Validators.required]),
     })
@@ -24,7 +25,7 @@ export class LoginFormComponent implements OnInit {
   onSubmit() {
     this.isLoading = true;
     setTimeout(() => (this.isLoading = false), 1000)
-    console.log(this.loginForm);
+    console.log(this.registerForm);
   }
 
 }

@@ -1,6 +1,9 @@
+@use "src/styles.scss" as *;
+
 .create-poll {
-  background-color: var(--secondary);
-  margin: 0 5em;
+  background-color: var(--white);
+  margin: 75px auto;
+  max-width: 788px;
   &__header {
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     padding-top: 2.8em;
@@ -10,106 +13,12 @@
     margin: 0 auto;
     text-align: center;
     h3.ant-typography {
-      font-weight: 400;
-      font-size: 30px;
-      line-height: 20px;
-      letter-spacing: 0.02em;
-      color: var(--black);
+      @include text-size(30px, 400, 20px, 0.02em, --black);
       margin-bottom: 0.33em;
     }
     h6.ant-typography {
-      font-size: 20px;
-      line-height: 20px;
-      letter-spacing: 0.02em;
-      font-weight: 400;
+      @include text-size(20px, 400, 20px, 0.02em, --grey);
       margin-bottom: 0.67em;
-      color: var(--grey);
     }
   }
-}
-
-textarea {
-  resize: none;
-}
-
-input,
-textarea,
-nz-select {
-  font-size: 1.25rem;
-}
-
-.create-poll .create-poll__form {
-  padding: 68px 93px 45px;
-  label {
-    font-size: 1.5625rem;
-  }
-  .form-question {
-    & .ant-input-affix-wrapper {
-      border-radius: 15px;
-      padding: 17px;
-      border: 1px solid rgba(0, 0, 0, 0.18);
-    }
-    button {
-      align-self: flex-start;
-    }
-  }
-
-  .form-description {
-    button {
-      float: right;
-    }
-    textarea {
-      border-radius: 15px;
-    }
-  }
-
-  .form-voting-type {
-    & nz-select {
-      max-width: 287px;
-    }
-  }
-
-  .form-answer-options {
-    & .ant-input-affix-wrapper {
-      border-radius: 15px;
-      padding: 17px;
-      border: 1px solid rgba(0, 0, 0, 0.18);
-    }
-    .add-answer-button {
-      align-self: baseline;
-      margin-top: 22px;
-      padding: 12px 17px;
-      font-size: 20px;
-      height: unset;
-      border-radius: 15px;
-    }
-    & nz-input-group {
-      margin-bottom: 20px;
-    }
-  }
-}
-
-.create-poll .form-actions {
-  justify-content: center;
-  display: flex;
-  & [nz-button] {
-    padding: 15px;
-    width: 146px;
-    height: unset;
-    font-size: 20px;
-    border-radius: 15px;
-    &:first-child {
-      margin-right: 26px;
-    }
-  }
-}
-
-::ng-deep .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-  height: unset;
-  padding: 17px;
-  border-radius: 15px;
-}
-
-::ng-deep .ant-form-item-with-help {
-  margin-bottom: 35px;
 }

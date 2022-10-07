@@ -1,0 +1,23 @@
+@mixin text-size(
+  $fontSize,
+  $fontWeight,
+  $lineHeight,
+  $letterSpacing,
+  $colorName: --black
+) {
+  @if $fontSize {
+    font-size: $fontSize;
+  }
+  @if $fontWeight {
+    font-weight: $fontWeight;
+  }
+  @if $lineHeight {
+    line-height: $lineHeight;
+  }
+  @if $letterSpacing {
+    letter-spacing: $letterSpacing;
+  }
+  @if $colorName {
+    color: var($colorName);
+  }
+}

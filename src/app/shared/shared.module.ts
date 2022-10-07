@@ -1,13 +1,20 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent } from './components/button/button.component';
-import { TextFieldComponent } from './components/text-field/text-field.component';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
-  declarations: [ButtonComponent, TextFieldComponent],
-  imports: [CommonModule, NzButtonModule, NzInputModule],
-  exports: [CommonModule, ButtonComponent, TextFieldComponent],
+  declarations: [ModalComponent],
+  imports: [
+    CommonModule,
+    NzButtonModule,
+    NzInputModule,
+    NzModalModule,
+    ReactiveFormsModule,
+  ],
+  exports: [CommonModule, ModalComponent],
 })
 export class SharedModule {}

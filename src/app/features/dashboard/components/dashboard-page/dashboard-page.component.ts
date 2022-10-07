@@ -8,6 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardPageComponent implements OnInit {
   havePolls = true;
 
-  constructor() {}
-  ngOnInit(): void {}
+  constructor() { }
+  ngOnInit(): void { }
 }

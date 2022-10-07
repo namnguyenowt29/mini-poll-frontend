@@ -13,3 +13,8 @@ export function validateOptionsRequired(answerOptionsControl: AbstractControl) {
       }
     : null;
 }
+
+export function validatePollDateTime(c: AbstractControl) {}
+
+export const IMAGE_REGEX = /[\/.](gif|jpg|jpeg|tiff|png)$/i;
+export const MINUTE_TO_MILISECOND = 60000;
