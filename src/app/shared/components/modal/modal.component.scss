@@ -1,0 +1,15 @@
+::ng-deep .ant-modal-content {
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
