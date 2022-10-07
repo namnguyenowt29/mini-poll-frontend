@@ -1,6 +1,6 @@
-.ant-modal-content {
-  overflow: auto;
-  border-radius: 24px;
+::ng-deep .ant-modal-content {
+  overflow: hidden;
+  border-radius: 15px;
 }
 
 .title {

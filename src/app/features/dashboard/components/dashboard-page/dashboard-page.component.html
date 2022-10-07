@@ -1,11 +1,24 @@
 <nz-layout class="dashboard-page">
   <h2 nz-typography>Dashboard</h2>
-  <button [nzType]="'default'" nz-button>
+  <!-- <button [nzType]="'default'" nz-button>
     <a routerLink="/create-poll">
       <span nz-icon nzType="plus" nzTheme="outline"></span>
       Add Poll
     </a>
   </button>
+   -->
+  <button nz-button nzType="primary" (click)="showModal()">
+    <span>Show Modal</span>
+  </button>
+  <app-modal
+    title="triet"
+    cancelText="OL"
+    (onCancle)="handleCancel($event)"
+    (onSubmit)="handleSubmit($event)"
+    [openModal]="isOpen"
+  >
+    <p>triet</p>
+  </app-modal>
 
   <div class="dashboard-page__content">
     <polls-table *ngIf="havePolls; else polls"></polls-table>

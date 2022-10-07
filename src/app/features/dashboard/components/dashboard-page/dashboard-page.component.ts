@@ -7,7 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPageComponent implements OnInit {
   havePolls = true;
-
+  isOpen = false
   constructor() { }
   ngOnInit(): void { }
+
+  showModal() {
+    this.isOpen = true
+  }
+
+  handleCancel(data: boolean) {
+    this.isOpen = data
+  }
+
+  handleSubmit(data: boolean) {
+    this.isOpen = data
+  }
 }
