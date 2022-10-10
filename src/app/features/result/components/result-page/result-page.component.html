@@ -1,1 +1,38 @@
-<p>result-page works!</p>
+<div class="container">
+  <div class="container__background--white">
+    <h1>{{ pollTitle | uppercase }}</h1>
+    <span>End At 2:00 20/10/2022</span>
+    <hr />
+    <div class="option">
+      <div class="option__item" *ngFor="let option of options">
+        <p>{{ option.name }}</p>
+        <nz-progress
+          [nzPercent]="option.percent"
+          [nzStrokeColor]="{ '0%': 'var(--blue)', '100%': 'var(--green)' }"
+          nzStatus="active"
+        ></nz-progress>
+      </div>
+    </div>
+    <span>{{ listOfVoters.length }} person answered</span>
+    <hr />
+    <nz-table
+      #basicTable
+      [nzData]="listOfVoters"
+      nzShowPagination="false"
+      class="content-container__table"
+    >
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Voted Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data">
+          <td>{{ data.email }}</td>
+          <td>Voted At {{ data.votedTime }} {{ data.date }}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>
