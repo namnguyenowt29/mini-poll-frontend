@@ -10,6 +10,7 @@ export class ModalComponent implements OnInit {
   @Input() title = "";
   @Input() submitText = "OK";
   @Input() cancelText = "Cancel";
+  @Input() width = "auto";
   @Input() hideCancelBtn = false;
   @Input() hideSubmitBtn = false;
 
@@ -26,7 +27,7 @@ export class ModalComponent implements OnInit {
   }
 
   handleCancel(): void {
-    this.onSubmit.emit(false)
+    this.onCancle.emit(false)
   }
 
 }

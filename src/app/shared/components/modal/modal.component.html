@@ -3,6 +3,7 @@
   [nzTitle]="modalTitle"
   (nzOnCancel)="handleCancel()"
   [nzFooter]="modalFooter"
+  nzWidth="{{ width }}"
   nzCentered
 >
   <ng-template #modalTitle>
@@ -10,9 +11,7 @@
       <span>{{ title | uppercase }}</span>
     </div>
   </ng-template>
-
   <ng-container *nzModalContent> <ng-content> </ng-content> </ng-container>
-
   <ng-template #modalFooter>
     <div class="footer">
       <button
