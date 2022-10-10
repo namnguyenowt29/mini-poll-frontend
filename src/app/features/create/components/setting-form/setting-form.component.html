@@ -1,0 +1,109 @@
+<form
+  nz-form
+  class="setting-form"
+  [nzLayout]="'horizontal'"
+  [formGroup]="settingForm"
+  (ngSubmit)="onSubmit()"
+>
+  <nz-form-item class="multiple-options">
+    <nz-form-label>Allow select multiple options</nz-form-label>
+    <nz-switch formControlName="allowMultipleOptions"> </nz-switch>
+  </nz-form-item>
+
+  <nz-form-item class="start-date">
+    <nz-form-label> Start Date </nz-form-label>
+    <div class="date-time-group" formGroupName="startDateTime">
+      <input
+        type="date"
+        (change)="handleStartDateChange()"
+        formControlName="sDate"
+      />
+      <input
+        type="time"
+        (change)="handleStartTimeChange()"
+        name="start-time"
+        formControlName="sTime"
+      />
+    </div>
+  </nz-form-item>
+
+  <nz-form-item class="end-date">
+    <nz-form-label> End Date </nz-form-label>
+    <div class="date-time-group" formGroupName="endDateTime">
+      <input
+        type="date"
+        (change)="handleEndDateChange()"
+        formControlName="eDate"
+      />
+      <input
+        type="time"
+        (change)="handleEndTimeChange()"
+        name="end-time"
+        formControlName="eTime"
+      />
+    </div>
+  </nz-form-item>
+
+  <nz-alert
+    *ngIf="
+      (isSubmitted && !isEndDateGreater) ||
+      (isSubmitted &&
+        (settingForm.get('endDateTime.eDate')?.hasError('required') ||
+          settingForm.get('endDateTime.eTime')?.hasError('required')))
+    "
+    nzType="error"
+    [nzMessage]="nzAlertTemplate"
+    nzShowIcon
+  ></nz-alert>
+  <ng-template #nzAlertTemplate>
+    <ng-container
+      *ngIf="
+        settingForm.get('endDateTime.eDate')?.hasError('required') ||
+        settingForm.get('endDateTime.eTime')?.hasError('required')
+      "
+      >Please select the value!</ng-container
+    >
+    <ng-container *ngIf="!isEndDateGreater"
+      >The end date should greater than the start date</ng-container
+    >
+  </ng-template>
+
+  <nz-form-item class="voting-restrictions">
+    <nz-form-label nzFor="voting-restrictions">
+      Voting restrictions
+    </nz-form-label>
+    <nz-select
+      formControlName="votingRestrictions"
+      id="voting-restrictions"
+      nzPlaceHolder="One vote per code"
+    >
+      <nz-option
+        *ngFor="let option of votingRestrictionOptions"
+        [nzValue]="option.id"
+        [nzLabel]="option.label"
+      ></nz-option>
+    </nz-select>
+  </nz-form-item>
+
+  <nz-form-item class="invite-via-email">
+    <nz-form-label nzFor="email"> Invite via email </nz-form-label>
+    <input
+      formControlName="emails"
+      id="email"
+      type="text"
+      nz-input
+      placeholder="Enter email here"
+    />
+  </nz-form-item>
+  <div class="form-actions">
+    <button type="button" nz-button nzType="primary">Cancel</button>
+    <button
+      type="submit"
+      nz-button
+      nzType="primary"
+      [disabled]="settingForm.invalid"
+    >
+      Save
+    </button>
+  </div>
+</form>

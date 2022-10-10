@@ -1,0 +1,24 @@
+@use "src/styles.scss" as *;
+
+.create-poll {
+  background-color: var(--white);
+  margin: 75px auto;
+  max-width: 788px;
+  &__header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding-top: 2.8em;
+    max-width: 501px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    h3.ant-typography {
+      @include text-size(30px, 400, 20px, 0.02em, --black);
+      margin-bottom: 0.33em;
+    }
+    h6.ant-typography {
+      @include text-size(20px, 400, 20px, 0.02em, --grey);
+      margin-bottom: 0.67em;
+    }
+  }
+}

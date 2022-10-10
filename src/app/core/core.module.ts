@@ -12,6 +12,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ToastMessageComponent } from './components/toast-message/toast-message.component';
 import { LoadingService } from './services/loading.service';
 import { NetworkingInterceptor } from './services/networking-interceptor.service';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
 
 @NgModule({
   providers: [
@@ -31,7 +32,8 @@ import { NetworkingInterceptor } from './services/networking-interceptor.service
     NzAvatarModule,
     NzDropDownModule,
     NzIconModule,
-    SharedModule
+    SharedModule,
+    NzUploadModule,
   ],
 })
-export class CoreModule { }
+export class CoreModule {}
