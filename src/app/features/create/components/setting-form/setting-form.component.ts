@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { format, isAfter } from 'date-fns';
 import { MINUTE_TO_MILISECOND } from 'app/features/create/config';
+import { CreatePollSerivce } from 'app/features/create/services/create-poll.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'setting-form',
@@ -23,7 +25,11 @@ export class SettingFormComponent implements OnInit {
   isSubmitted = false;
   isEndDateGreater = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private createService: CreatePollSerivce,
+    private router: Router
+  ) {
     this.settingForm = this.fb.group({
       allowMultipleOptions: this.fb.control(false),
       startDateTime: this.fb.group({
@@ -49,7 +55,6 @@ export class SettingFormComponent implements OnInit {
     const startDateTime = new Date(startDate + ' ' + startTime + 'Z');
     const endDateTime = new Date(endDate + ' ' + endTime + 'Z');
     this.isEndDateGreater = isAfter(endDateTime, startDateTime);
-    console.log(this.isEndDateGreater);
   }
 
   onSubmit() {
@@ -62,6 +67,7 @@ export class SettingFormComponent implements OnInit {
     );
     if (this.settingForm.valid && this.isEndDateGreater) {
       console.log('@@ Setting form value', this.settingForm.value);
+      this.router.navigate(['/dashboard']);
     } else {
       Object.values(this.settingForm.controls).forEach((control) => {
         if (control.invalid) {

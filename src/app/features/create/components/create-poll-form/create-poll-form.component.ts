@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { CreatePollSerivce } from 'app/features/create/services/create-poll.service';
 import {
   QUESTION_MAX_LENGTH,
   validateOptionsRequired,
@@ -7,7 +8,6 @@ import {
   IMAGE_REGEX,
 } from 'app/features/create/config';
 import { Observable } from 'rxjs';
-import { CreatePageService } from 'app/features/create/services/create-page.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -29,7 +29,7 @@ export class CreatePollFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private createService: CreatePageService,
+    private createService: CreatePollSerivce,
     private router: Router
   ) {
     this.createPollForm = this.fb.group({
@@ -62,9 +62,6 @@ export class CreatePollFormComponent implements OnInit {
     this.isSubmitted = true;
     if (this.createPollForm.valid) {
       console.log('@Submit form', this.createPollForm.getRawValue());
-      this.createService.createPollValue$.next(
-        this.createPollForm.getRawValue()
-      );
       this.router.navigate(['create-poll', 'step2']);
     } else {
       Object.values(this.createPollForm.controls).forEach((control) => {

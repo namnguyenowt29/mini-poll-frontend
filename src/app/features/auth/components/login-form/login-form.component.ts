@@ -9,15 +9,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class LoginFormComponent implements OnInit {
 
   isLoading = false;
-  loginForm!: FormGroup;
+  loginForm: FormGroup;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
     this.loginForm = new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'password': new FormControl(null, [Validators.required]),
     })
+  }
+
+  ngOnInit(): void {
   }
 
   // TO-DO: calling api

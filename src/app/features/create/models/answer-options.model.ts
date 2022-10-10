@@ -1,5 +1,5 @@
 export interface CreatePollValueType {
-  createPollStep: {
+  createPollStep?: {
     answerOptions: string[];
     description?: string;
     question: string;
@@ -9,7 +9,7 @@ export interface CreatePollValueType {
     };
     votingType: string;
   };
-  settingPollStep: {
+  settingPollStep?: {
     allowMultipleOptions: boolean;
     startDateTime: {
       sDate: Date | string;

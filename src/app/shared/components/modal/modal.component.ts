@@ -10,11 +10,12 @@ export class ModalComponent implements OnInit {
   @Input() title = '';
   @Input() submitText = 'OK';
   @Input() cancelText = 'Cancel';
+  @Input() width = 'auto';
   @Input() hideCancelBtn = false;
   @Input() hideSubmitBtn = false;
 
   @Output() onSubmit = new EventEmitter<boolean>();
-  @Output() onCancel = new EventEmitter<boolean>();
+  @Output() onCancle = new EventEmitter<boolean>();
 
   constructor() {}
 
@@ -25,6 +26,6 @@ export class ModalComponent implements OnInit {
   }
 
   handleCancel(): void {
-    this.onCancel.emit(false);
+    this.onCancle.emit(false);
   }
 }

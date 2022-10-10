@@ -1,0 +1,40 @@
+.container {
+  padding: 60px;
+
+  &__background--white {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 3% 10%;
+    background-color: var(--white);
+    border-radius: 20px;
+  }
+
+  hr {
+    width: 300px;
+  }
+
+  &__table {
+    th,
+    td {
+      background-color: transparent;
+      text-align: center;
+    }
+  }
+
+  .option {
+    &__item {
+      text-align: start;
+    }
+  }
+
+  span {
+    font-size: 18px;
+  }
+}
+
+.ant-progress {
+  margin-right: 8px;
+  margin-bottom: 8px;
+  display: inline-block;
+}

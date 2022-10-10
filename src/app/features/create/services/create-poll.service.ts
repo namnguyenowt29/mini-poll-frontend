@@ -1,7 +1,8 @@
 import { BehaviorSubject } from 'rxjs';
 import { CreatePollValueType } from 'app/features/create/models/answer-options.model';
 
-export class CreatePageService {
+export class CreatePollSerivce {
+  public createPollStepValue: any;
   public readonly createPollValue$ = new BehaviorSubject<CreatePollValueType>({
     createPollStep: {
       answerOptions: [''],

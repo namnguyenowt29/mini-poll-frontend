@@ -17,7 +17,7 @@ import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { CreatePollFormComponent } from './components/create-poll-form/create-poll-form.component';
 import { SettingFormComponent } from './components/setting-form/setting-form.component';
-import { CreatePageService } from './services/create-page.service';
+import { CreatePollSerivce } from './services/create-poll.service';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -26,7 +26,7 @@ import { RouterModule } from '@angular/router';
     CreatePollFormComponent,
     SettingFormComponent,
   ],
-  providers: [CreatePageService],
+  providers: [CreatePollSerivce],
   imports: [
     ReactiveFormsModule,
     SharedModule,
