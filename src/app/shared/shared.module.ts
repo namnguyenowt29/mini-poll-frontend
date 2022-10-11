@@ -4,10 +4,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { ModalSimpleComponent } from './components/modal-simple/modal-simple.component';
 import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
-  declarations: [ModalComponent],
+  declarations: [
+    ModalComponent,
+    ModalSimpleComponent
+  ],
   imports: [
     CommonModule,
     NzButtonModule,
@@ -15,6 +19,6 @@ import { ModalComponent } from './components/modal/modal.component';
     NzModalModule,
     ReactiveFormsModule,
   ],
-  exports: [CommonModule, ModalComponent],
+  exports: [CommonModule, ModalComponent, ModalSimpleComponent],
 })
-export class SharedModule {}
+export class SharedModule { }

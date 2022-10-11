@@ -1,0 +1,26 @@
+<nz-modal
+  [(nzVisible)]="openModal"
+  (nzOnCancel)="handleCloseModal()"
+  [nzClosable]="false"
+  [nzFooter]="modalFooter"
+  nzWidth="{{ width }}"
+  nzCentered
+>
+  <ng-container *nzModalContent>
+    <div class="title">
+      <span>{{ title | uppercase }}</span>
+    </div>
+    <ng-content> </ng-content>
+  </ng-container>
+
+  <ng-template #modalFooter>
+    <div class="footer">
+      <button nz-button [nzType]="'default'" (click)="handleCloseModal()">
+        {{ cancelText }}
+      </button>
+      <button nz-button [nzType]="'primary'" (click)="handleCloseModal()">
+        {{ submitText }}
+      </button>
+    </div>
+  </ng-template>
+</nz-modal>

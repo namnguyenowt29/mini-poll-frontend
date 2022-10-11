@@ -4,6 +4,7 @@ export enum PollStatus {
   ENDED = 'ended',
   DRAFT = 'draft',
 }
+
 interface PollStatusType {
   pollStatus: PollStatus;
   pollTitle: string;

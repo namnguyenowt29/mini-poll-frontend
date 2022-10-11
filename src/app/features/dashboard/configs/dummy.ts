@@ -25,7 +25,7 @@ export const dummyDashboardList: DashBoardType[] = [
     voter: '',
     status: {
       pollTitle: 'End at 2:00 20/10/2022',
-      pollStatus: PollStatus.ENDED,
+      pollStatus: PollStatus.END,
     },
   },
   {
@@ -66,7 +66,7 @@ export const dummyDashboardList: DashBoardType[] = [
     title: 'John Brown',
     voter: '33/60',
     status: {
-      pollTitle: 'End at 2:00 20/10/2022',
+      pollTitle: 'Ended at 2:00 20/10/2022',
       pollStatus: PollStatus.ENDED,
     },
   },

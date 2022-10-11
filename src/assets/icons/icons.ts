@@ -1,6 +1,7 @@
 import { IconDefinition } from '@ant-design/icons-angular';
 import {
   CloseOutline,
+  EditOutline,
   FileImageFill,
   FileImageOutline,
   FileSearchOutline,
@@ -21,4 +22,11 @@ export const AntIcons: IconDefinition[] = [
   FileImageOutline,
   CloseOutline,
   FileImageFill,
+  FileSearchOutline,
+  PlusOutline,
+  FilterOutline,
+  UserOutline,
+  KeyOutline,
+  LogoutOutline,
+  EditOutline
 ];

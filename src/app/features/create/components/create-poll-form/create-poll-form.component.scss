@@ -35,7 +35,7 @@
 .create-poll-form .form-answer-options {
   & .ant-input-affix-wrapper {
     border-radius: 15px;
-    border: 1px solid var(--black03);
+    border: 1px solid var(--black1);
     padding: 17px;
   }
   .add-answer-button {
@@ -91,7 +91,7 @@ nz-select {
   align-items: center;
   padding: 80px;
   border: 1px dashed var(--black);
-  background-color: var(--grey01);
+  background-color: var(--grey1);
   position: relative;
   & span {
     font-size: 2rem;

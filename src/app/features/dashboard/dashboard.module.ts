@@ -10,9 +10,15 @@ import { PollsTableComponent } from './components/polls-table/polls-table.compon
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { PollDetailComponent } from './components/poll-detail/poll-detail.component';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
 
 @NgModule({
-  declarations: [DashboardPageComponent, PollsTableComponent],
+  declarations: [
+    DashboardPageComponent,
+    PollsTableComponent,
+    PollDetailComponent
+  ],
   imports: [
     SharedModule,
     DashboardRoutingModule,
@@ -23,6 +29,7 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
     NzInputModule,
     NzIconModule,
     NzLayoutModule,
+    NzRadioModule
   ],
 })
 export class DashboardModule { }

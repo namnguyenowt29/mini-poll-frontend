@@ -9,7 +9,7 @@ import { CreatePollSerivce } from 'app/features/create/services/create-poll.serv
 export class DashboardPageComponent implements OnInit {
   havePolls = true;
 
-  constructor(private createService: CreatePollSerivce) {}
+  constructor(private createService: CreatePollSerivce) { }
   ngOnInit(): void {
     this.createService.createPollValue$.asObservable().subscribe((data) => {
       console.log(data);

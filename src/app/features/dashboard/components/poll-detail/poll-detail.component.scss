@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  max-width: 70vw;
+  gap: 15px;
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &__item {
+      width: 100%;
+      border: 1px solid var(--grey1);
+      text-align: left;
+      padding: 0.5em;
+    }
+  }
+
+  .invitees {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__email {
+      border-radius: 15px;
+      border: 1px solid var(--grey3);
+      background-color: var(--grey1);
+      padding: 0.2em 0.6em;
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+  }
+}

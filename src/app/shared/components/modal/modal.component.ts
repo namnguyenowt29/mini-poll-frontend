@@ -7,25 +7,25 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ModalComponent implements OnInit {
   @Input() openModal = false;
-  @Input() title = '';
-  @Input() submitText = 'OK';
-  @Input() cancelText = 'Cancel';
-  @Input() width = 'auto';
+  @Input() title: string | undefined = "";
+  @Input() submitText = "OK";
+  @Input() cancelText = "Cancel";
+  @Input() width = "auto";
   @Input() hideCancelBtn = false;
   @Input() hideSubmitBtn = false;
 
   @Output() onSubmit = new EventEmitter<boolean>();
-  @Output() onCancle = new EventEmitter<boolean>();
+  @Output() onCancel = new EventEmitter<boolean>();
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   handleOk(): void {
     this.onSubmit.emit(false);
   }
 
   handleCancel(): void {
-    this.onCancle.emit(false);
+    this.onCancel.emit(false)
   }
 }
