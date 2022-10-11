@@ -1,4 +1,5 @@
 import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import en from '@angular/common/locales/en';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +15,7 @@ import { CreateModule } from './features/create/create.module';
 import { DashboardModule } from './features/dashboard/dashboard.module';
 import { ResultModule } from './features/result/result.module';
 import { SharedModule } from './shared/shared.module';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 registerLocaleData(en);
 
@@ -31,6 +33,8 @@ registerLocaleData(en);
     CreateModule,
     ResultModule,
     NzIconModule.forRoot(AntIcons),
+    HttpClientModule,
+    NzSpinModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
