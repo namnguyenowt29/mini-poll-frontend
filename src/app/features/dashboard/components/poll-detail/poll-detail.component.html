@@ -1,0 +1,39 @@
+<ng-container>
+  <div class="container">
+    <p>Start At 2:00 23/11/2022</p>
+    <hr />
+    <div class="options">
+      <div class="options__item" *ngFor="let item of options">
+        <label nz-radio>{{ item.content }} </label>
+      </div>
+    </div>
+    <p>Invitee: {{ invitees.length }}</p>
+    <div class="invitees">
+      <div class="invitees__email" *ngFor="let email of invitees">
+        {{ email }}
+      </div>
+    </div>
+    <div class="actions">
+      <button nz-button nzType="primary" nzSize="large" nzShape="circle">
+        <span nz-icon nzType="edit" theme="outline"></span>
+      </button>
+      <button
+        nz-button
+        nzType="primary"
+        nzSize="large"
+        nzShape="circle"
+        (click)="this.openDeleteModal = true"
+      >
+        <span nz-icon nzType="delete" theme="outline"></span>
+      </button>
+    </div>
+  </div>
+  <app-modal-simple
+    [openModal]="openDeleteModal"
+    title="Delete poll"
+    (onCloseModal)="handleCancelDelete($event)"
+  >
+    <p>Your data will be deleted permanently.</p>
+    <p>Are you sure?</p>
+  </app-modal-simple>
+</ng-container>

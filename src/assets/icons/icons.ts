@@ -1,5 +1,5 @@
 import { IconDefinition } from "@ant-design/icons-angular";
-import { FileSearchOutline, FilterOutline, KeyOutline, LogoutOutline, PlusOutline, UserOutline } from "@ant-design/icons-angular/icons";
+import { EditOutline, FileSearchOutline, FilterOutline, KeyOutline, LogoutOutline, PlusOutline, UserOutline } from "@ant-design/icons-angular/icons";
 
 export const AntIcons: IconDefinition[] = [
     FileSearchOutline,
@@ -7,5 +7,6 @@ export const AntIcons: IconDefinition[] = [
     FilterOutline,
     UserOutline,
     KeyOutline,
-    LogoutOutline
+    LogoutOutline,
+    EditOutline
 ];

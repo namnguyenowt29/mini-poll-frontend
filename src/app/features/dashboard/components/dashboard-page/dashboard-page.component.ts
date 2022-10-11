@@ -9,5 +9,7 @@ export class DashboardPageComponent implements OnInit {
   havePolls = true;
 
   constructor() { }
+
   ngOnInit(): void { }
+
 }

@@ -1,46 +1,58 @@
-<div class="table-wrapper">
-  <nz-input-group [nzSuffix]="suffixIconSearch">
-    <input type="text" nz-input placeholder="Find your poll" />
-  </nz-input-group>
-  <ng-template #suffixIconSearch>
-    <span nz-icon nzType="search" nzTheme="outline"></span>
-  </ng-template>
-  <nz-table
-    class="table-wrapper__polls"
-    [nzFrontPagination]="false"
-    #pollsTable
-    [nzData]="listOfData"
-  >
-    <thead>
-      <tr>
-        <th>No</th>
-        <th>Title</th>
-        <th>Voter</th>
-        <th>
-          Status
-          <span nz-icon nzType="filter" nzTheme="outline"></span>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let poll of pollsTable.data">
-        <td>{{ poll.no }}</td>
-        <td>{{ poll.title }}</td>
-        <td>{{ poll.voter || "-" }}</td>
-        <td
-          [ngClass]="{
-            'status-start': poll.status.pollStatus === 'start',
-            'status-draft': poll.status.pollStatus === 'draft',
-            'status-end': poll.status.pollStatus === 'end',
-            'status-ended': poll.status.pollStatus === 'ended'
-          }"
-        >
-          {{ poll.status.pollTitle }}
-        </td>
-      </tr>
-    </tbody>
-  </nz-table>
-  <div class="table-wrapper__pagination">
-    <nz-pagination [nzPageIndex]="1" [nzTotal]="40"></nz-pagination>
+<ng-container>
+  <div class="table-wrapper">
+    <nz-input-group [nzSuffix]="suffixIconSearch">
+      <input type="text" nz-input placeholder="Find your poll" />
+    </nz-input-group>
+    <ng-template #suffixIconSearch>
+      <span nz-icon nzType="search" nzTheme="outline"></span>
+    </ng-template>
+    <nz-table
+      class="table-wrapper__polls"
+      [nzFrontPagination]="false"
+      #pollsTable
+      [nzData]="listOfData"
+    >
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Title</th>
+          <th>Voter</th>
+          <th>
+            Status
+            <span nz-icon nzType="filter" nzTheme="outline"></span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let poll of pollsTable.data" (click)="selectPoll(poll)">
+          <td>{{ poll.no }}</td>
+          <td>{{ poll.title }}</td>
+          <td>{{ poll.voter || "-" }}</td>
+          <td
+            [ngClass]="{
+              'status-start': poll.status.pollStatus === PollStatusEnum.START,
+              'status-draft': poll.status.pollStatus === PollStatusEnum.DRAFT,
+              'status-end': poll.status.pollStatus === PollStatusEnum.END,
+              'status-ended': poll.status.pollStatus === PollStatusEnum.ENDED
+            }"
+          >
+            {{ poll.status.pollTitle }}
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+    <div class="table-wrapper__pagination">
+      <nz-pagination [nzPageIndex]="1" [nzTotal]="40"></nz-pagination>
+    </div>
   </div>
-</div>
+
+  <app-modal
+    [openModal]="isOpenedDetail"
+    (onCancel)="handleCancelModal($event)"
+    [hideCancelBtn]="true"
+    [hideSubmitBtn]="true"
+    [title]="currentPoll?.title"
+  >
+    <app-poll-detail></app-poll-detail>
+  </app-modal>
+</ng-container>
