@@ -1,2 +1,13 @@
-<p>create-page works!</p>
-<text-field></text-field>
+<div class="create-poll">
+  <div class="create-poll__header">
+    <h3 nz-typography>CREATE A POLL</h3>
+    <h6 nz-typography>
+      {{
+        formUrl === "/create-poll/step2"
+          ? "Setting & Sharing"
+          : "Complete the below fields to create your poll"
+      }}
+    </h6>
+  </div>
+  <router-outlet></router-outlet>
+</div>

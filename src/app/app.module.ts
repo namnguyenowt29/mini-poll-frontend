@@ -30,9 +30,9 @@ registerLocaleData(en);
     DashboardModule,
     CreateModule,
     ResultModule,
-    NzIconModule.forRoot(AntIcons)
+    NzIconModule.forRoot(AntIcons),
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

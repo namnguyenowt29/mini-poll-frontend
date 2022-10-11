@@ -1,0 +1,47 @@
+@use "src/styles.scss" as *;
+
+.setting-form {
+  padding: 68px 93px;
+  justify-content: space-between;
+}
+
+.setting-form nz-form-item {
+  justify-content: space-between;
+  & #email {
+    border-radius: 15px;
+    font-size: 20px;
+    margin-top: 12px;
+    padding: 17px;
+  }
+
+  &:last-child {
+    margin-top: 62px;
+  }
+}
+
+::ng-deep .ant-form-item-label > label {
+  @include text-size(20px, 400, 18px, unset, --grey02);
+}
+
+::ng-deep input[type="time"] {
+  margin-left: 16px;
+}
+
+nz-alert {
+  margin-bottom: 24px;
+}
+
+.setting-form .form-actions {
+  justify-content: center;
+  display: flex;
+  & [nz-button] {
+    border-radius: 15px;
+    font-size: 20px;
+    height: unset;
+    padding: 15px;
+    width: 146px;
+    &:first-child {
+      margin-right: 26px;
+    }
+  }
+}

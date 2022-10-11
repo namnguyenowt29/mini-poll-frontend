@@ -1,0 +1,113 @@
+.create-poll-form {
+  padding: 68px 93px;
+  label {
+    font-size: 1.25rem;
+  }
+}
+
+.create-poll-form .form-question {
+  & .ant-input-affix-wrapper {
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    padding: 17px;
+  }
+  button {
+    align-self: flex-start;
+  }
+}
+
+.create-poll-form .form-description {
+  button {
+    float: right;
+  }
+  textarea {
+    resize: none;
+    border-radius: 15px;
+  }
+}
+
+.create-poll-form .form-voting-type {
+  & nz-select {
+    max-width: 287px;
+  }
+}
+
+.create-poll-form .form-answer-options {
+  & .ant-input-affix-wrapper {
+    border-radius: 15px;
+    border: 1px solid var(--black03);
+    padding: 17px;
+  }
+  .add-answer-button {
+    align-self: baseline;
+    border-radius: 15px;
+    font-size: 20px;
+    height: unset;
+    margin-top: 22px;
+    padding: 12px 17px;
+  }
+  & nz-input-group {
+    margin-bottom: 20px;
+  }
+  & nz-alert {
+    margin: 25px 0;
+  }
+}
+
+.create-poll-form .form-actions {
+  justify-content: center;
+  display: flex;
+  & [nz-button] {
+    border-radius: 15px;
+    font-size: 20px;
+    height: unset;
+    padding: 15px;
+    width: 146px;
+    &:first-child {
+      margin-right: 26px;
+    }
+  }
+}
+
+::ng-deep .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border-radius: 15px;
+  height: unset;
+  padding: 17px;
+}
+
+::ng-deep .ant-form-item-with-help {
+  margin-bottom: 35px;
+}
+
+input,
+textarea,
+nz-select {
+  font-size: 1.25rem;
+}
+
+.upload-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px;
+  border: 1px dashed var(--black);
+  background-color: var(--grey01);
+  position: relative;
+  & span {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+  input[type="file"] {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+[nz-image] {
+  margin: 0 auto;
+}
