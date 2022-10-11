@@ -20,7 +20,7 @@
 }
 
 ::ng-deep .ant-form-item-label > label {
-  @include text-size(20px, 400, 18px, unset, --grey02);
+  @include text-size(20px, 400, 18px, unset, --grey2);
 }
 
 ::ng-deep input[type="time"] {
